@@ -3,12 +3,13 @@ package com.example.demo.service;
 import org.springframework.context.ApplicationContext;
 
 import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SqlScript {
     private ApplicationContext context;
     private EntityManager entityManager;
-    private List<String> ignoreTables;
+    private List<String> ignoreTables = new ArrayList<>();
 
     private SqlScript() {
     }
@@ -41,7 +42,7 @@ public class SqlScript {
     public class SqlScriptBuilder {
         private ApplicationContext context;
         private EntityManager entityManager;
-        private List<String> ignoreTables;
+        private List<String> ignoreTables = new ArrayList<>();
 
         public SqlScriptBuilder(ApplicationContext context, EntityManager entityManager) {
             this.context = context;

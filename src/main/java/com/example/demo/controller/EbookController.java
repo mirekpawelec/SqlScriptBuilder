@@ -24,7 +24,7 @@ public class EbookController {
 
     @RequestMapping(value = "/{tablesNames}")
     public String show(@PathVariable("tablesNames") List<String> tablesNames) {
-        sqlScript = SqlScript.getBuilder(ctx, entityManager).withIgnoreTables(tablesNames).addIgnoreTable("trzecia").build();
+        sqlScript = SqlScript.getBuilder(ctx, entityManager).addIgnoreTable("trzecia").build();
         return sqlScript.showInfo();
     }
 }
